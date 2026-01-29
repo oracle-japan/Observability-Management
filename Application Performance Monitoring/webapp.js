@@ -191,16 +191,16 @@ async function showList(conn, res) {
 
     res.write("</table>");
     res.write("</div>");
-    // ここで APM スクリプト挿入
+    // APMのブラウザエージェントを有効にするための情報
     res.write(`
       <script>
       window.apmrum = (window.apmrum || {}); 
       window.apmrum.serviceName='Apm Browser';
-      window.apmrum.webApplication='BANANA FARMER Demonstration';
-      window.apmrum.ociDataUploadEndpoint='https://aaaadgxhypph6aaaaaaaaaepg4.apm-agt.us-ashburn-1.oci.oraclecloud.com';
-      window.apmrum.OracleAPMPublicDataKey='2RYCCTDSV6GOID36E2DACUTOYEYQARO4';
+      window.apmrum.webApplication='WebApp';
+      window.apmrum.ociDataUploadEndpoint='xxxxxxxxxxxxxxxxx';
+      window.apmrum.OracleAPMPublicDataKey='xxxxxxxxxxxxxxxxx';
       </script>
-      <script async crossorigin="anonymous" src="https://aaaadgxhypph6aaaaaaaaaepg4.apm-agt.us-ashburn-1.oci.oraclecloud.com/static/jslib/apmrum.min.js"></script>
+      <script async crossorigin="anonymous" src="xxxxxxxxxxxxxxxxx/static/jslib/apmrum.min.js"></script>
     `);
 
     res.end();
