@@ -23,7 +23,6 @@ const sdk = new NodeSDK({
   serviceName: SERVICE_NAME
 });
 
-// start() が undefined の場合もあるので try/catch
 try {
   sdk.start();
   console.log("OpenTelemetry initialized for OCI APM");
@@ -31,7 +30,6 @@ try {
   console.error("Error initializing OpenTelemetry", err);
 }
 
-// 終了処理
 const shutdown = () => {
   try {
     sdk.shutdown();
