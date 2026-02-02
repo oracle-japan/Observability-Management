@@ -5,10 +5,10 @@ const { NodeSDK } = require('@opentelemetry/sdk-node');
 const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
 const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
 
-// OCI APM Private EndpointとData Keyを設定
-const PRIVATE_ENDPOINT = "xxxxxxxxxxxxxx/20200101/opentelemetry/public/v1/traces";
-const PRIVATE_DATA_KEY = "xxxxxxxxxxxxxx";
-const SERVICE_NAME = "WebBananaApp";
+// データ・アップロード・エンドポイントとプライベート・キーを設定
+const PRIVATE_ENDPOINT = "xxxxxxxxxxxxxx/20200101/opentelemetry/public/v1/traces"; // データ・アップロード・エンドポイント
+const PRIVATE_DATA_KEY = "xxxxxxxxxxxxxx"; //プライベート・キー名
+const SERVICE_NAME = "WebBananaApp"; //任意の名前
 
 const exporter = new OTLPTraceExporter({
   url: PRIVATE_ENDPOINT,
