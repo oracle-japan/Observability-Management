@@ -191,16 +191,18 @@ async function showList(conn, res) {
 
     res.write("</table>");
     res.write("</div>");
-    // APMのブラウザエージェントを有効にするための情報
+    
+    // データ・アップロード・エンドポイントとプライベート・キーを設定
     res.write(`
       <script>
       window.apmrum = (window.apmrum || {}); 
       window.apmrum.serviceName='Apm Browser';
       window.apmrum.webApplication='WebApp';
-      window.apmrum.ociDataUploadEndpoint='xxxxxxxxxxxxxxxxx';
-      window.apmrum.OracleAPMPublicDataKey='xxxxxxxxxxxxxxxxx';
+      window.apmrum.ociDataUploadEndpoint='xxxxxxxxxxxxxxxxx'; /* データ・アップロード・エンドポイント */ 
+      window.apmrum.OracleAPMPublicDataKey='xxxxxxxxxxxxxxxxx'; /* パブリック・データ・キー */
       </script>
-      <script async crossorigin="anonymous" src="xxxxxxxxxxxxxxxxx/static/jslib/apmrum.min.js"></script>
+      <!-- APM Browser RUM ライブラリ（データ・アップロード・エンドポイント） -->
+      <script async crossorigin="anonymous" src="xxxxxxxxxxxxxxxxx/static/jslib/apmrum.min.js"></script> 
     `);
 
     res.end();
